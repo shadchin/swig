@@ -696,12 +696,15 @@ SwigPyObject_TypeOnce(void) {
 #if PY_VERSION_HEX >= 0x03040000
       0,                                    /* tp_finalize */
 #endif
+#if PY_VERSION_HEX < 0x03090000
+      0,                                    /* tp_print */
 #ifdef COUNT_ALLOCS
       0,                                    /* tp_allocs */
       0,                                    /* tp_frees */
       0,                                    /* tp_maxalloc */
       0,                                    /* tp_prev */
       0                                     /* tp_next */
+#endif
 #endif
     };
     swigpyobject_type = tmp;
